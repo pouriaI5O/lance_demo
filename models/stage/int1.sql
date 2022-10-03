@@ -7,7 +7,7 @@ WHERE action= 'Change'
 ORDER BY id DESC
 ),
 cte2 as (
-select*,(select TOP 1  id
+select*,(select TOP 1  ids
 FROM cte
 WHERE action= 'Change'
 ORDER BY id DESC) as change ,case when id < change AND action = 'Use' then 'done' else action
